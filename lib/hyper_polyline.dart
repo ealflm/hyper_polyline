@@ -30,6 +30,13 @@ class HyperPolylineLayer extends PolylineLayer {
       this.onMiss,
       this.pointerDistanceTolerance = 15,
       super.polylineCulling = false});
+
+  @override
+  Widget build(BuildContext context) {
+    final mapState = FlutterMapState.maybeOf(context)!;
+    return TappablePolylineLayer(
+        this, mapState, mapState.mapController.mapEventStream);
+  }
 }
 
 /// A polyline with a tag
@@ -56,21 +63,6 @@ class TaggedPolyline extends Polyline {
             gradientColors: gradientColors,
             colorsStop: colorsStop,
             isDotted: isDotted);
-}
-
-// A widget to render the layer as a FlutterMap.children
-class TappablePolylineLayerWidget extends StatelessWidget {
-  final HyperPolylineLayer options;
-
-  const TappablePolylineLayerWidget({Key? key, required this.options})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final mapState = FlutterMapState.maybeOf(context)!;
-    return TappablePolylineLayer(
-        options, mapState, mapState.mapController.mapEventStream);
-  }
 }
 
 class TappablePolylineLayer extends StatelessWidget {
