@@ -9,6 +9,11 @@ import 'package:positioned_tap_detector_2/positioned_tap_detector_2.dart';
 
 /// The options allowing tappable polyline tweaks
 class HyperPolylineLayer extends PolylineLayer {
+  /// The list of [TaggedPolyline] which could be tapped
+  @override
+  // ignore: overridden_fields
+  final List<TaggedPolyline> polylines;
+
   /// The tolerated distance between pointer and user tap to trigger the [onTap] callback
   final double pointerDistanceTolerance;
 
@@ -20,7 +25,7 @@ class HyperPolylineLayer extends PolylineLayer {
 
   HyperPolylineLayer(
       {super.key,
-      super.polylines = const [],
+      this.polylines = const [],
       this.onTap,
       this.onMiss,
       this.pointerDistanceTolerance = 15,
