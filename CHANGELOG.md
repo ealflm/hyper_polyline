@@ -1,3 +1,7 @@
+## 0.0.4
+
+Add double tap miss function
+
 ## 0.0.3
 
 Updated to match with new flutter_map version
