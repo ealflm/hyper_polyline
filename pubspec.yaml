@@ -1,7 +1,7 @@
 name: hyper_polyline
 description: A flutter_map plugin that adds Polyline class with onTap event
 version: 0.0.1
-homepage:
+homepage: https://github.com/ealflm/hyper_polyline
 
 environment:
   sdk: ">=2.18.4 <3.0.0"
